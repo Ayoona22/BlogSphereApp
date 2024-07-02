@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BlogSphere</title>
+</head>
+<body>
+    <div class = box1></div>
+    <h2 id="head">Blog Your Thoughts</h2>
+    <br><br>
+    <form method="post" action="{% url 'save' %}">
+        {% csrf_token %}
+        <input type="text" id="id1" name="title" placeholder="Title" required><br><br>
+        <input type="text" id="id2" name="content" placeholder="Content" required><br><br>
+        <input type="text" id="id3" name="author" placeholder="Author"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+</body>
+</html>
