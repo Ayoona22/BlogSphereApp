@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BlogSphere</title>
+</head>
+<body>
+    <h3>{{onlyblog.name}}</h3>
+    <table border="2">
+    <tr>
+        <td>{{onlyblog.title}}</td>
+        <td>{{onlyblog.content}}</td>
+        <td>{{onlyblog.author}}</td>
+    </tr>
+    </table>
+    <form action="{% url 'all' %}">
+        <input type="submit" value="Back">
+    </form>
+</body>
+</html>

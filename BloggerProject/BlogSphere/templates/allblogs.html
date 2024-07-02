@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BlogSphere</title>
+</head>
+<body>
+    <h2>BLOGS</h2>
+    <div  style="text-align: center;">
+        <table border="1">
+            <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Author</th>
+            <th>Show</th>
+            <th>Remove</th>
+            <th>Edit</th>
+            </tr>
+            {% for i in blogs %}
+                <tr>
+                    <td>{{i.title}}</td>
+                    <td>{{i.content}}</td>
+                    <td>{{i.author}}</td>
+                    <td><a href="{% url 'oneblog' i.pk %}">View</a></td>
+                    <td>
+                        <form action="{% url 'delblog' i.pk %}">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url 'updateblog' i.pk %}">
+                            <input type="submit" value="Edit">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+</body>
+</html>

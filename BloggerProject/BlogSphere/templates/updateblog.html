@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BlogSphere</title>
+</head>
+<body>
+    <h3>Edit Your Blog</h3>
+    <br>
+    <form method="post" action="{% url 'update_blog' blogs.pk %}">
+        {% csrf_token %}
+        <label for="id1">Title</label><br>
+        <input type="text" id="id1" name="title" value="{{blogs.title}}"><br>
+        <label for="id3">Content</label><br>
+        <input type="text" id="id3" name="content" value="{{blogs.content}}"><br>
+        <label for="id4">Author</label><br>
+        <input type="text" id="id4" name="author" value="{{blogs.auhtor}}"><br>
+        <input type="submit" value="Change">
+    </form>
+</body>
+</html>
